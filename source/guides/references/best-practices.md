@@ -186,7 +186,7 @@ Additionally, testing through an OAuth provider is mutable - you will first need
 **Here are potential solutions to alleviate these problems:**
 
 1. {% url "Stub" stub %} out the OAuth provider and bypass using their UI altogether. You could trick your application into believing the OAuth provider has passed its token to your application.
-2. If you **must** get a real token you can use {% url `cy.request()` request %} and use the **programmatic** API that your OAuth provider provides. These APIs likely change **more** infrequently and you avoid problems like throttling and A/B campaigns.
+2. If you **must** get a real token you can use {% url `cy.request()` request %} and use the **programmatic** API that your OAuth provider provides. These APIs are likely to change **less frequently** and you avoid problems like throttling and A/B campaigns.
 3. Instead of having your test code bypass OAuth, you could also ask your server for help. Perhaps all an OAuth token does is generate a user in your database. Oftentimes OAuth is only useful initially and your server establishes its own session with the client. If that is the case, use {% url `cy.request()` request %} to get the session directly from your server and bypass the provider altogether.
 
 {% note info Recipes %}
